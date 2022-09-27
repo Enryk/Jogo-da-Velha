@@ -2,3 +2,47 @@ body {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
 }
 
+.card {
+    padding: 5px 5px;
+    width: 305px;
+    border: 0.5px solid;
+}
+
+h1 {
+    text-align: center;
+}
+
+.input {
+    width: 250px;
+    margin: 5px 5px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}
+
+#gameBoard {
+    background-color: #232323;
+    display: grid;
+    grid-template-columns: 6rem 6rem 6rem;
+    grid-template-rows: 6rem 6rem 6rem;
+    gap: .5rem;
+    margin-bottom: 1.5rem;
+    max-width: 19rem;
+}
+
+#gameBoard span {
+    background-color: #ddd;
+    display: grid;
+    place-content: center;
+    font-size: 5rem;
+}
+  
+#gameBoard span.win {
+    background-color: #25a340;
+}
+  
+.cursor-pointer {
+    cursor: pointer;
+}
