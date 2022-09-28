@@ -19,8 +19,28 @@ function initializeGame () {
     })
 }
 
-function handleBoardClick (ev) {
+function disableRegion (element) {
+    element.style.cursor = 'default'
+    element.removeEventListener('click', handleBoardClick)
+}
 
+function handleBoardClick (ev) {
+    const span = ev.currentTarget
+    const region = ev.currentTarget.dataset.region
+    const rowColumnPair = region.split('.')
+    const row = rowColumnPair[0]
+    const column = rowColumnPair[1]
+    if (turnPlayer === 'player1') {
+        span.innerText = 'X'
+        vBoard[row][column] = 'X'
+    } else {
+        span.innerText = 'O'
+        vBoard[row][column] = 'O'
+    }
+
+    console.clear()
+    console.table(vBoard)
+    disableRegion(span)
 }
 
 document.getElementById('start').addEventListener('click', initializeGame)
